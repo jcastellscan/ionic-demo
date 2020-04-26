@@ -14,9 +14,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+  <!-- <div id="container">
     <strong class="capitalize">{{ folder }}</strong>
     <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI
         Components</a></p>
-  </div>
+  </div> -->
+
+  <ion-card *ngFor="let inf of informatives">
+    <ion-card-header>
+      <ion-card-subtitle>taital</ion-card-subtitle>
+      <ion-card-title>{{ inf.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ inf.description }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
