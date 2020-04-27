@@ -27,6 +27,9 @@
     </ion-card-header>
     <ion-card-content>
       {{ inf.description }}
+      <ion-button (click)="like(inf)" fill="clear">
+        <ion-icon [name]="inf.liked ? 'heart' : 'heart-outline'"></ion-icon>
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

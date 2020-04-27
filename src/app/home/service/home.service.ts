@@ -18,4 +18,8 @@ export class InformativeService {
 		return this.http.get<Informative[]>('/api/informatives');
 	}
 
+	likeInformative(id: string, changes: Partial<Informative>): Observable<Informative> {
+		return this.http.put<Informative>('/api/informatives/' + id, changes);
+	}
+
 }
