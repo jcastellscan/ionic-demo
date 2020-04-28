@@ -19,6 +19,10 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    this.loadInformatives();
+  }
+
+  loadInformatives() {
     this.informativeService.getInformatives().subscribe(response => this.informatives = response);
   }
 
@@ -28,6 +32,16 @@ export class HomePage implements OnInit {
         informative.liked = response.liked;
       }
     );
+  }
+
+  addInformative(inf: Informative): void {
+    this.informativeService.createInformative().subscribe();
+    this.loadInformatives();
+  }
+
+  removeInformative(inf: Informative): void {
+    this.informativeService.removeInformative(inf._id).subscribe();
+    this.loadInformatives();
   }
 
 }
